@@ -19,7 +19,7 @@ public class Owner {
     private String email;
 
     @Column(nullable = false)
-    private int mobileNumber;
+    private String mobileNumber;
 
     @Column(nullable = false)
     private String password;
@@ -32,7 +32,7 @@ public class Owner {
     public Owner() {
     }
 
-    public Owner(int ownerId, String firstName, String lastName, String email, int mobileNumber, String password, LocalDateTime createdAt) {
+    public Owner(int ownerId, String firstName, String lastName, String email, String mobileNumber, String password, LocalDateTime createdAt) {
         this.ownerId = ownerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -74,11 +74,11 @@ public class Owner {
         this.email = email;
     }
 
-    public int getMobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(int mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
