@@ -28,14 +28,9 @@ public class JwtController {
     private JwtUtil jwtUtil;
 
     @RequestMapping(value = "/token" , method = RequestMethod.POST)
-    public ResponseEntity<?> generateToken(@RequestBody JwtRequest jwtRequest) throws Exception {
-        try{
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(jwtRequest.getEmail() , jwtRequest.getPassword()));
-        }
-        catch (BadCredentialsException e){
-            e.printStackTrace();
-            throw new Exception("Wrong Email and Password");
-        }
+    public ResponseEntity<?> generateToken(@RequestBody JwtRequest jwtRequest){
+
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(jwtRequest.getEmail() , jwtRequest.getPassword()));
 
         UserDetails userDetails = customUserDetailsService.loadUserByUsername(jwtRequest.getEmail());
 
