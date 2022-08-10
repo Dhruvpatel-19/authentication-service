@@ -35,9 +35,9 @@ public class SecurityConfig{
 
       http
               .authorizeRequests()
-              .antMatchers("/token").permitAll()
-              .antMatchers("/owner/test").hasRole("OWNER")
-              .antMatchers("/user/test").hasRole("USER")
+              .antMatchers("/authenticationService/token").permitAll()
+              .antMatchers("/authenticationService/owner/test").hasRole("OWNER")
+              .antMatchers("/authenticationService/user/test").hasRole("USER")
               .anyRequest()
               .authenticated()
               .and()

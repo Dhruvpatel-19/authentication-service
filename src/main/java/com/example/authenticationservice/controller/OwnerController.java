@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/owner")
+@RequestMapping(value = "/authenticationService/owner")
 public class OwnerController {
 
     @RequestMapping(value = "/test" , method = RequestMethod.GET)

@@ -26,7 +26,7 @@ public class JwtController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @RequestMapping(value = "/token" , method = RequestMethod.POST)
+    @RequestMapping(value = "/authenticationService/token" , method = RequestMethod.POST)
     public ResponseEntity<?> generateToken(@RequestBody JwtRequest jwtRequest){
 
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(jwtRequest.getEmail() , jwtRequest.getPassword()));
