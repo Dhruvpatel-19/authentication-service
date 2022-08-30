@@ -16,11 +16,6 @@ public class UserController {
     private JwtUtil jwtUtil;
     @GetMapping(value = "/test")
     public String userTest(HttpServletRequest request){
-        String requestTokenHeader = request.getHeader("Authorization");
-        String email = null;
-        String jwtToken =jwtToken = requestTokenHeader.substring(7);
-        email = jwtUtil.extractUsername(jwtToken);
-        System.out.println("User email is : "+email);
         return "Only accessible to user";
     }
 }
